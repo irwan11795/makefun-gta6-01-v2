@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SOLHAVEN — Open City</title>
+<link rel="icon" href="data:,">
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #8ec9e8; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  canvas { display: block; }
+  #hud { position: fixed; top: 0; left: 0; z-index: 10; pointer-events: none; color: #fff; font-weight: 700; font-size: 16px; padding: 12px 16px; text-shadow: 0 1px 4px rgba(0,0,0,.6); }
+  #menu, #end, #pause { position: fixed; inset: 0; z-index: 20; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; color: #fff; text-align: center; background: linear-gradient(180deg, rgba(10,40,70,.55), rgba(10,40,70,.88)); }
+  #end, #pause { display: none; }
+  #menu h1 { font-size: 60px; margin: 0; letter-spacing: 8px; text-shadow: 0 4px 18px rgba(0,0,0,.5); }
+  #menu p { font-size: 18px; margin: 0; opacity: .95; }
+  #end h2, #pause h2 { font-size: 44px; margin: 0; letter-spacing: 4px; text-shadow: 0 4px 18px rgba(0,0,0,.5); }
+  #end p, #pause p { font-size: 17px; margin: 0; opacity: .95; max-width: 520px; }
+  .keys { font-size: 14px; line-height: 1.8; opacity: .9; }
+  button { pointer-events: auto; cursor: pointer; font-size: 20px; font-weight: 700; padding: 13px 38px; border: 0; border-radius: 999px; background: #ffc93c; color: #20303c; box-shadow: 0 4px 14px rgba(0,0,0,.35); font-family: inherit; }
+  button:hover { background: #ffd964; }
+</style>
+<script type="importmap">
+{ "imports": { "three": "./vendor/three.module.min.js" } }
+</script>
+</head>
+<body>
+<div id="hud"></div>
+<div id="menu"></div>
+<div id="end">
+  <h2 id="endTitle"></h2>
+  <p id="endText"></p>
+  <button id="restartBtn" type="button">MAIN LAGI</button>
+</div>
+<div id="pause">
+  <h2>PAUSE</h2>
+  <p>Tekan P untuk lanjut.</p>
+</div>
+<script type="module" src="./src/boot.js"></script>
+</body>
+</html>
